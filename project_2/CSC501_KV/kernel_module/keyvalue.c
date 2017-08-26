@@ -1,0 +1,305 @@
+/* Mohit Goyal - mgoyal
+   Amit Kanwar - akanwar2
+   We tested the program below with multiple benchmark codes. We decided to use locks on each bucket node as the overhead per node was too much in terms of space as opposed to reduced
+   concurrency with buckets. Also, the code was getting complicated with locks per node.
+   We also assign transaction ids after completion. So it is possible that a GET occurs before DELETE, but because the DELETE finished first, it
+   got the earlier transaction id. Had we used a lock on the entire function, the vice versa would have been true
+   We have also assumed that any process calling a GET would have space allocated for the incoming data. Otherwise there would be no space to copy the data and the GET would fail.
+   The RW Semaphore either allows infinite Readers or One writer. Whenever a writer is waiting, the writer is allowed in first after which the subsequent readers are allowed.
+*/
+
+//////////////////////////////////////////////////////////////////////
+//                             North Carolina State University
+//
+//
+//
+//                             Copyright 2016
+//
+////////////////////////////////////////////////////////////////////////
+//
+// This program is free software; you can redistribute it and/or modify it
+// under the terms and conditions of the GNU General Public License,
+// version 2, as published by the Free Software Foundation.
+//
+// This program is distributed in the hope it will be useful, but WITHOUT
+// ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+// FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for
+// more details.
+//
+// You should have received a copy of the GNU General Public License along with
+// this program; if not, write to the Free Software Foundation, Inc.,
+// 51 Franklin St - Fifth Floor, Boston, MA 02110-1301 USA.
+//
+////////////////////////////////////////////////////////////////////////
+//
+//   Author:  Hung-Wei Tseng
+//
+//   Description:
+//     Skeleton of KeyValue Pseudo Device
+//
+////////////////////////////////////////////////////////////////////////
+
+#include "keyvalue.h"
+
+#include <asm/uaccess.h>
+#include <linux/slab.h>
+#include <linux/kernel.h>
+#include <linux/errno.h>
+#include <linux/mm.h>
+#include <linux/fs.h>
+#include <linux/miscdevice.h>
+#include <linux/module.h>
+#include <linux/moduleparam.h>
+#include <linux/poll.h>
+#include <linux/rwsem.h>
+
+#define BUCKETS 10007 
+
+unsigned transaction_id;
+static void free_callback(void *data)
+{
+}
+
+typedef struct keyvalue_pair{
+//	struct rw_semaphore *sem;
+    __u64 key;
+    __u64 size;
+    void *data;
+	struct keyvalue_pair *next;
+} keyvalue_pair;
+
+typedef struct bucket_struct{
+	struct rw_semaphore *sem;
+	struct keyvalue_pair *head;
+} bucket_struct;
+
+
+static bucket_struct buckets[BUCKETS]; //bucket structure
+
+static long keyvalue_get(struct keyvalue_get __user *ukv)
+{
+    //The GET function iterates through the BUCKET linked list and gets the data if found. It copies it into the ukv pointer specified.
+	struct keyvalue_get kv;
+	
+	bucket_struct *bucket;
+	keyvalue_pair **HEAD;
+	if(copy_from_user(&kv,ukv,sizeof(struct keyvalue_get))){
+		printk(KERN_ALERT "\nCouldn't copy data properly");
+		return -1;
+	}
+	printk(KERN_INFO "Searching KEY:%llu",kv.key);
+	bucket = buckets + (kv.key%BUCKETS); //Hash Function - mod by prime
+	down_read(bucket->sem); //critical section begins
+	HEAD = &(bucket->head);
+	keyvalue_pair *ptr = *HEAD;
+	if(*HEAD == NULL || ptr ==NULL){
+		printk(KERN_ALERT "\nKeyValue pair not here.");
+		up_read(bucket->sem);
+		return -1;
+	}
+	while(ptr!=NULL){
+		if(ptr!=NULL && ptr->key == kv.key){ //To prevent a delete from causing a segmentation fault
+			if(copy_to_user(kv.size, &(ptr->size), sizeof(__u64))){ //Copies size
+				printk(KERN_ALERT "\nCouldn't copy data properly");
+				up_read(bucket->sem);
+				return -1;
+			}
+			if(copy_to_user(kv.data,ptr->data,ptr->size)){  //Copies data
+				printk(KERN_ALERT "\nCouldn't copy data properly");
+				up_read(bucket->sem);
+				return -1;
+			}
+			else{
+				printk(KERN_INFO "Getting KEY:%llu %s",kv.key,(char*)kv.data);
+				up_read(bucket->sem);
+    			return transaction_id++;
+			}
+			
+		}
+		ptr = ptr->next;
+	}
+	up_read(bucket->sem); //critical section ends
+
+	printk(KERN_ALERT "Couldn't find KEY:%llu",kv.key);
+
+    return -1;
+}
+
+static long keyvalue_set(struct keyvalue_set __user *ukv)
+{   
+	//SET functions gets the key and inserts the data into the specified bucket linked list. If the key already exists, then it replaces the data in it and frees the previous data
+    struct keyvalue_set kv;
+	bucket_struct *bucket;
+	keyvalue_pair **HEAD;
+	keyvalue_pair *ptr_prev;
+	if(copy_from_user(&kv,ukv,sizeof(struct keyvalue_set))){
+		printk(KERN_ALERT "\nCouldn't copy data properly");
+		return -1;
+	}
+	void *data_kp = (void*)kmalloc(kv.size, GFP_KERNEL);
+	if(!data_kp){
+		printk(KERN_ALERT "\nCouldn't allocate memory");
+		return -1;
+		
+	}
+	if(copy_from_user(data_kp,kv.data,kv.size)){
+		printk(KERN_ALERT "\nCouldn't copy data properly");
+		return -1;
+	}
+	
+	keyvalue_pair *kp = (keyvalue_pair*)kmalloc(sizeof(keyvalue_pair), GFP_KERNEL);
+	if(!kp){
+		printk(KERN_ALERT "\nCouldn't allocate memory");
+		return -1;
+		
+	}
+	kp->key = kv.key;
+	kp->data = data_kp;
+	kp->size = kv.size;
+	kp->next = NULL;
+	bucket = buckets + (kv.key%BUCKETS);
+	down_write(bucket->sem);    //critical section begins
+	HEAD = &(bucket->head);
+	keyvalue_pair *ptr = *HEAD;
+	if(*HEAD == NULL){
+		printk(KERN_ALERT "\nKeyValue pair not here. Creating one now");
+		*HEAD = kp;
+		up_write(bucket->sem);
+		printk(KERN_INFO "Setting new KEY:%llu %llu %s",kp->key,kp->size,(char*)kp->data);
+	}
+	
+	else{
+		while(ptr!=NULL){
+			if(ptr!=NULL && ptr->key == kp->key){
+				kfree(ptr->data);
+				ptr->data = kp->data;
+				ptr->size = kp->size;
+				printk(KERN_INFO "Replacing KEY:%llu %llu %s",ptr->key,ptr->size,(char*)ptr->data);
+				kfree(kp);
+				up_write(bucket->sem);
+    			return transaction_id++;
+			}
+			ptr_prev = ptr;
+			ptr = ptr->next;
+		}
+		ptr = ptr_prev;
+		ptr->next = kp;
+		printk(KERN_INFO "Setting KEY:%llu %llu %s Parent is: %llu",kv.key,kv.size,(char*)data_kp, ptr->key);
+		up_write(bucket->sem);    //critical section ends
+	}
+
+
+    return transaction_id++;
+}
+
+static long keyvalue_delete(struct keyvalue_delete __user *ukv)
+{
+    struct keyvalue_delete kv;
+	bucket_struct *bucket;
+	keyvalue_pair **HEAD;
+	if(copy_from_user(&kv,ukv,sizeof(struct keyvalue_delete))){
+		printk(KERN_ALERT "\nCouldn't copy data properly");
+		return -1;
+	}
+	printk(KERN_INFO "Deleting KEY:%llu",kv.key);
+	bucket = buckets + (kv.key%BUCKETS);
+	down_write(bucket->sem);
+	HEAD = &(bucket->head);
+	if(*HEAD == NULL){
+		printk(KERN_ALERT "\nKeyValue pair not here.");
+		up_write(bucket->sem);
+		return -1;
+	}
+	keyvalue_pair *ptr_prev = *HEAD;
+	keyvalue_pair *ptr = ptr_prev->next;
+	if(ptr_prev->key == kv.key){
+		*HEAD = ptr;
+		kfree(ptr_prev->data);
+		kfree(ptr_prev);
+		up_write(bucket->sem);
+		return transaction_id++;
+	}
+	while(ptr!=NULL){
+		if(ptr->key == kv.key){
+			ptr_prev->next = ptr->next;
+			kfree(ptr->data);
+			kfree(ptr);
+			up_write(bucket->sem);
+    		return transaction_id++;
+		}
+			
+		ptr_prev = ptr;
+		ptr = ptr->next;
+	}
+
+	up_write(bucket->sem);
+	printk(KERN_ALERT "\nKeyValue pair not here.");
+    return -1;
+}
+
+//Added by Hung-Wei
+     
+unsigned int keyvalue_poll(struct file *filp, struct poll_table_struct *wait)
+{
+    unsigned int mask = 0;
+    printk("keyvalue_poll called. Process queued\n");
+    return mask;
+}
+
+static long keyvalue_ioctl(struct file *filp, unsigned int cmd,
+                                unsigned long arg)
+{
+    switch (cmd) {
+    case KEYVALUE_IOCTL_GET:
+        return keyvalue_get((void __user *) arg);
+    case KEYVALUE_IOCTL_SET:
+        return keyvalue_set((void __user *) arg);
+    case KEYVALUE_IOCTL_DELETE:
+        return keyvalue_delete((void __user *) arg);
+    default:
+        return -ENOTTY;
+    }
+}
+
+static int keyvalue_mmap(struct file *filp, struct vm_area_struct *vma)
+{
+    return 0;
+}
+
+static const struct file_operations keyvalue_fops = {
+    .owner                = THIS_MODULE,
+    .unlocked_ioctl       = keyvalue_ioctl,
+    .mmap                 = keyvalue_mmap,
+//    .poll		  = keyvalue_poll,
+};
+
+static struct miscdevice keyvalue_dev = {
+    .minor = MISC_DYNAMIC_MINOR,
+    .name = "keyvalue",
+    .fops = &keyvalue_fops,
+};
+
+static int __init keyvalue_init(void)
+{
+    int ret;
+
+    if ((ret = misc_register(&keyvalue_dev)))
+        printk(KERN_ERR "Unable to register \"keyvalue\" misc device\n");
+	__u64 i = 0;
+	for(i = 0;i<BUCKETS;i++){
+	    buckets[i].sem = (struct rw_semaphore*)kmalloc(sizeof(struct rw_semaphore), GFP_KERNEL);
+		init_rwsem(buckets[i].sem);
+	}
+    return ret;
+}
+
+static void __exit keyvalue_exit(void)
+{
+    misc_deregister(&keyvalue_dev);
+}
+
+MODULE_AUTHOR("Hung-Wei Tseng <htseng3@ncsu.edu>");
+MODULE_LICENSE("GPL");
+MODULE_VERSION("0.1");
+module_init(keyvalue_init);
+module_exit(keyvalue_exit);

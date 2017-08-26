@@ -1,0 +1,1 @@
+cmd_/home/mohit/operating_systems/project_2/CSC501_KV/kernel_module/keyvalue.ko := ld -r -m elf_x86_64 -T ./scripts/module-common.lds --build-id  -o /home/mohit/operating_systems/project_2/CSC501_KV/kernel_module/keyvalue.ko /home/mohit/operating_systems/project_2/CSC501_KV/kernel_module/keyvalue.o /home/mohit/operating_systems/project_2/CSC501_KV/kernel_module/keyvalue.mod.o

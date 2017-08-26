@@ -1,0 +1,7 @@
+   NODEID: 2
+   unique: 12, success, outsize: 144
+unique: 13, opcode: OPEN (14), nodeid: 2, insize: 48, pid: 31651
+open flags: 0x8000 /mohit
+fuse: bad error value: 12
+   unique: 13, error: -34 (Numerical result out of range), outsize: 16
+fuse_main returned 0

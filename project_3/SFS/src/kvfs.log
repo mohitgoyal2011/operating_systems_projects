@@ -1,0 +1,1291 @@
+
+kvfs_init()
+    conn:
+    proto_major = 7
+    proto_minor = 23
+    async_read = 1
+    max_write = 131072
+    max_readahead = 131072
+    capable = 00000ffb
+    want = 00000010
+    max_background = 0
+    congestion_threshold = 0
+    context:
+    fuse = 01d9a500
+    uid = 0
+    gid = 0
+    pid = 0
+    private_data = 01d99010
+    logfile = 01d9a040
+    rootdir = /home/mohit/kvfs_test
+    umask = 00000
+access    kvfs_fullpath:  path = "/"
+String: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_access - fpath: /home/mohit/kvfs_test, mask: 4gettattrString: /.Trash
+MD5: 3817cedc0f64e53325cfc4665db1f668
+   kvfs_getattr - fpath: 3817cedc0f64e53325cfc4665db1f668, statbuf: 0xb188ec90
+Error: No such file or directory: Unable to get attributes
+
+gettattrString: /.Trash-1000
+MD5: e1b26379a002c5193694f34734931754
+   kvfs_getattr - fpath: e1b26379a002c5193694f34734931754, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+access    kvfs_fullpath:  path = "/"
+String: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_access - fpath: /home/mohit/kvfs_test, mask: 1gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+opendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Path is` /
+readdirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_readdir - fpath: /home/mohit/kvfs_test, filler: 0xb24c7410, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb188ec90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_getattr - fpath: cef83743f41271360074b0688e5d1cd6, statbuf: 0xb188ec90
+Error: No such file or directory: Unable to get attributes
+
+mkdirString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_mkdir - fpath: /home/mohit/kvfs_test/cef83743f41271360074b0688e5d1cd6, mode: 0775
+gettattrString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_getattr - fpath: cef83743f41271360074b0688e5d1cd6, statbuf: 0xb108dc90
+gettattrString: /drop
+MD5: 9feb19d132a946b9cc163070059c4465
+   kvfs_getattr - fpath: 9feb19d132a946b9cc163070059c4465, statbuf: 0xb188ec90
+Error: No such file or directory: Unable to get attributes
+
+mkdirString: /drop
+MD5: 9feb19d132a946b9cc163070059c4465
+   kvfs_mkdir - fpath: /home/mohit/kvfs_test/9feb19d132a946b9cc163070059c4465, mode: 0775
+gettattrString: /drop
+MD5: 9feb19d132a946b9cc163070059c4465
+   kvfs_getattr - fpath: 9feb19d132a946b9cc163070059c4465, statbuf: 0xb108dc90
+gettattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_getattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb188ec90
+Error: No such file or directory: Unable to get attributes
+
+mknodString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_mknod - fpath: /home/mohit/kvfs_test/88a32eb748fbfce72660b90ae70ae7c4, mode: 0100664, dev: 0
+gettattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_getattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb188ec90
+openString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_open - fpath: /home/mohit/kvfs_test/88a32eb748fbfce72660b90ae70ae7c4, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+flushString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+
+kvfs_flush(path="88a32eb748fbfce72660b90ae70ae7c4", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0xc11836c24db1ceed
+writeString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_write - fpath: 88a32eb748fbfce72660b90ae70ae7c4, fuse_file_info: 0xb188edb0
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+flushString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+
+kvfs_flush(path="88a32eb748fbfce72660b90ae70ae7c4", fi=0xb108dd40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0xc11836c24db1ceed
+releaseString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_release - fpath: 88a32eb748fbfce72660b90ae70ae7c4, fi: 0xb188ed40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+gettattrString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_getattr - fpath: 4560542831b547c257d7e25b195e6394, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+mknodString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_mknod - fpath: /home/mohit/kvfs_test/4560542831b547c257d7e25b195e6394, mode: 0100664, dev: 0
+gettattrString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_getattr - fpath: 4560542831b547c257d7e25b195e6394, statbuf: 0xb188ec90
+openString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_open - fpath: /home/mohit/kvfs_test/4560542831b547c257d7e25b195e6394, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+flushString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+
+kvfs_flush(path="4560542831b547c257d7e25b195e6394", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0xc11836c24db1ceed
+writeString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_write - fpath: 4560542831b547c257d7e25b195e6394, fuse_file_info: 0xb108ddb0
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+flushString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+
+kvfs_flush(path="4560542831b547c257d7e25b195e6394", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0xc11836c24db1ceed
+releaseString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_release - fpath: 4560542831b547c257d7e25b195e6394, fi: 0xb108dd40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+gettattrString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_getattr - fpath: cef83743f41271360074b0688e5d1cd6, statbuf: 0xb188ec90
+gettattrString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_getattr - fpath: df0b3c1603d68b4cbc942e117c8aef05, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+mknodString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_mknod - fpath: /home/mohit/kvfs_test/df0b3c1603d68b4cbc942e117c8aef05, mode: 0100664, dev: 0
+gettattrString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_getattr - fpath: df0b3c1603d68b4cbc942e117c8aef05, statbuf: 0xb188ec90
+openString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_open - fpath: /home/mohit/kvfs_test/df0b3c1603d68b4cbc942e117c8aef05, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+flushString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+
+kvfs_flush(path="df0b3c1603d68b4cbc942e117c8aef05", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0xc11836c24db1ceed
+writeString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_write - fpath: df0b3c1603d68b4cbc942e117c8aef05, fuse_file_info: 0xb108ddb0
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+flushString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+
+kvfs_flush(path="df0b3c1603d68b4cbc942e117c8aef05", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0xc11836c24db1ceed
+releaseString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_release - fpath: df0b3c1603d68b4cbc942e117c8aef05, fi: 0xb108dd40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000008
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000008
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_getattr - fpath: cef83743f41271360074b0688e5d1cd6, statbuf: 0xb108dc90
+access    kvfs_fullpath:  path = "/pop"
+String: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_access - fpath: /home/mohit/kvfs_test/cef83743f41271360074b0688e5d1cd6, mask: 1opendirString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_opendir - fpath: /home/mohit/kvfs_test/cef83743f41271360074b0688e5d1cd6, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Path is` /pop
+readdirString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_readdir - fpath: /home/mohit/kvfs_test/cef83743f41271360074b0688e5d1cd6, filler: 0xb24c7410, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+releasedirString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_releasedir - fpath: cef83743f41271360074b0688e5d1cd6, fuse_file_info: 0xb188ec90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_getattr - fpath: cef83743f41271360074b0688e5d1cd6, statbuf: 0xb188ec90
+access    kvfs_fullpath:  path = "/"
+String: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_access - fpath: /home/mohit/kvfs_test, mask: 1opendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+Path is` /
+readdirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_readdir - fpath: /home/mohit/kvfs_test, filler: 0xb24c7410, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+gettattrString: /88a32eb748fbfce72660b90ae70ae7c4
+MD5: b98b2df5d4c3bbf1dd584d409d4bdb9b
+   kvfs_getattr - fpath: b98b2df5d4c3bbf1dd584d409d4bdb9b, statbuf: 0xb108dc90
+gettattrString: /cef83743f41271360074b0688e5d1cd6
+MD5: aacbbf5f372a30bceb165ec2c2473bfa
+   kvfs_getattr - fpath: aacbbf5f372a30bceb165ec2c2473bfa, statbuf: 0xb188ec90
+gettattrString: /4560542831b547c257d7e25b195e6394
+MD5: 4978de75bae45be45c0670907287e512
+   kvfs_getattr - fpath: 4978de75bae45be45c0670907287e512, statbuf: 0xb108dc90
+gettattrString: /9feb19d132a946b9cc163070059c4465
+MD5: c090e741a6faf6a61a13e767c2108cd7
+   kvfs_getattr - fpath: c090e741a6faf6a61a13e767c2108cd7, statbuf: 0xb188ec90
+gettattrString: /df0b3c1603d68b4cbc942e117c8aef05
+MD5: e0d9855fe77a0c58a7df3ccaccb1effb
+   kvfs_getattr - fpath: e0d9855fe77a0c58a7df3ccaccb1effb, statbuf: 0xb108dc90
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb108dc90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_getattr - fpath: cef83743f41271360074b0688e5d1cd6, statbuf: 0xb108dc90
+gettattrString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_getattr - fpath: df0b3c1603d68b4cbc942e117c8aef05, statbuf: 0xb188ec90
+openString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_open - fpath: /home/mohit/kvfs_test/df0b3c1603d68b4cbc942e117c8aef05, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000c
+    lock_owner = 0x0000000000000000
+readString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_read - fpath: df0b3c1603d68b4cbc942e117c8aef05, fuse_file_info: 0xb188ed40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x0000000c
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000c
+    lock_owner = 0x0000000000000000
+fgetattrString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_fgetattr - fpath: df0b3c1603d68b4cbc942e117c8aef05, statbuf: 0xb108dc60, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00000000
+    fh_old = 0x0000000c
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000c
+    lock_owner = 0x0000000000000000
+    si:
+    st_dev = 2049
+    st_ino = 1351171
+    st_mode = 0100664
+    st_nlink = 1
+    st_uid = 1000
+    st_gid = 1000
+    st_rdev = 0
+    st_size = 4
+    st_blksize = 4096
+    st_blocks = 8
+    st_atime = 0x583e1cfa
+    st_mtime = 0x583e1cee
+    st_ctime = 0x583e1cee
+flushString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+
+kvfs_flush(path="df0b3c1603d68b4cbc942e117c8aef05", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x0000000c
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000c
+    lock_owner = 0x6d89dd545ac2e4b3
+releaseString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_release - fpath: df0b3c1603d68b4cbc942e117c8aef05, fi: 0xb108dd40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x0000000c
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000c
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+   kvfs_getattr - fpath: 35d98f66fa376ba2458a4236f30ee2e1, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+gettattrString: /pop
+MD5: cef83743f41271360074b0688e5d1cd6
+   kvfs_getattr - fpath: cef83743f41271360074b0688e5d1cd6, statbuf: 0xb188ec90
+gettattrString: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_getattr - fpath: df0b3c1603d68b4cbc942e117c8aef05, statbuf: 0xb108dc90
+gettattrString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+   kvfs_getattr - fpath: 35d98f66fa376ba2458a4236f30ee2e1, statbuf: 0xb188ec90
+Error: No such file or directory: Unable to get attributes
+
+hard lilnkString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+String: /pop/lol
+MD5: df0b3c1603d68b4cbc942e117c8aef05
+   kvfs_link - fpath: /home/mohit/kvfs_test/df0b3c1603d68b4cbc942e117c8aef05, fnewpath: /home/mohit/kvfs_test/35d98f66fa376ba2458a4236f30ee2e1
+gettattrString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+   kvfs_getattr - fpath: 35d98f66fa376ba2458a4236f30ee2e1, statbuf: 0xb108dc90
+gettattrString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+   kvfs_getattr - fpath: 35d98f66fa376ba2458a4236f30ee2e1, statbuf: 0xb188ec90
+openString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+   kvfs_open - fpath: /home/mohit/kvfs_test/35d98f66fa376ba2458a4236f30ee2e1, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000d
+    lock_owner = 0x0000000000000000
+readString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+   kvfs_read - fpath: 35d98f66fa376ba2458a4236f30ee2e1, fuse_file_info: 0xb188ed40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x0000000d
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000d
+    lock_owner = 0x0000000000000000
+fgetattrString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+   kvfs_fgetattr - fpath: 35d98f66fa376ba2458a4236f30ee2e1, statbuf: 0xb108dc60, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00000000
+    fh_old = 0x0000000d
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000d
+    lock_owner = 0x0000000000000000
+    si:
+    st_dev = 2049
+    st_ino = 1351171
+    st_mode = 0100664
+    st_nlink = 2
+    st_uid = 1000
+    st_gid = 1000
+    st_rdev = 0
+    st_size = 4
+    st_blksize = 4096
+    st_blocks = 8
+    st_atime = 0x583e1d0b
+    st_mtime = 0x583e1cee
+    st_ctime = 0x583e1d08
+flushString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+
+kvfs_flush(path="35d98f66fa376ba2458a4236f30ee2e1", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x0000000d
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000d
+    lock_owner = 0x872b1103738ee43d
+releaseString: /catre
+MD5: 35d98f66fa376ba2458a4236f30ee2e1
+   kvfs_release - fpath: 35d98f66fa376ba2458a4236f30ee2e1, fi: 0xb108dd40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x0000000d
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x000000000000000d
+    lock_owner = 0x0000000000000000
+gettattrString: /mohitg
+MD5: 34c4a894c27933f8f163c95760f2352a
+   kvfs_getattr - fpath: 34c4a894c27933f8f163c95760f2352a, statbuf: 0xb188ec90
+Error: No such file or directory: Unable to get attributes
+
+gettattrString: /mohitg
+MD5: 34c4a894c27933f8f163c95760f2352a
+   kvfs_getattr - fpath: 34c4a894c27933f8f163c95760f2352a, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+symlinkString: /mohitg
+MD5: 34c4a894c27933f8f163c95760f2352a
+String: mohit
+MD5: d8052f9e09a17e6907629e76bbd261cc
+kvfs_symlink - fpath: /home/mohit/kvfs_test/d8052f9e09a17e6907629e76bbd261cc, link: /home/mohit/kvfs_test/34c4a894c27933f8f163c95760f2352a
+gettattrString: /mohitg
+MD5: 34c4a894c27933f8f163c95760f2352a
+   kvfs_getattr - fpath: 34c4a894c27933f8f163c95760f2352a, statbuf: 0xb188ec90
+readlinkString: /mohitg
+MD5: 34c4a894c27933f8f163c95760f2352a
+   kvfs_readlink - fpath: /home/mohit/kvfs_test/34c4a894c27933f8f163c95760f2352a, link: /home/mohit/kvfs_test/, size: 4097, len: 0
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+readlinkString: /mohitg
+MD5: 34c4a894c27933f8f163c95760f2352a
+   kvfs_readlink - fpath: /home/mohit/kvfs_test/34c4a894c27933f8f163c95760f2352a, link: /home/mohit/kvfs_test/, size: 4097, len: 0
+gettattrString: /mohitg
+MD5: 34c4a894c27933f8f163c95760f2352a
+   kvfs_getattr - fpath: 34c4a894c27933f8f163c95760f2352a, statbuf: 0xb188ec90
+readlinkString: /mohitg
+MD5: 34c4a894c27933f8f163c95760f2352a
+   kvfs_readlink - fpath: /home/mohit/kvfs_test/34c4a894c27933f8f163c95760f2352a, link: /home/mohit/kvfs_test/, size: 4097, len: 0
+opendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb188ec90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+opendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+Path is` /
+readdirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_readdir - fpath: /home/mohit/kvfs_test, filler: 0xb24c7410, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+gettattrString: /88a32eb748fbfce72660b90ae70ae7c4
+MD5: b98b2df5d4c3bbf1dd584d409d4bdb9b
+   kvfs_getattr - fpath: b98b2df5d4c3bbf1dd584d409d4bdb9b, statbuf: 0xb188ec90
+gettattrString: /cef83743f41271360074b0688e5d1cd6
+MD5: aacbbf5f372a30bceb165ec2c2473bfa
+   kvfs_getattr - fpath: aacbbf5f372a30bceb165ec2c2473bfa, statbuf: 0xb108dc90
+gettattrString: /35d98f66fa376ba2458a4236f30ee2e1
+MD5: 2eef02031b3a00c22803d70f1aa1df34
+   kvfs_getattr - fpath: 2eef02031b3a00c22803d70f1aa1df34, statbuf: 0xb188ec90
+gettattrString: /4560542831b547c257d7e25b195e6394
+MD5: 4978de75bae45be45c0670907287e512
+   kvfs_getattr - fpath: 4978de75bae45be45c0670907287e512, statbuf: 0xb108dc90
+gettattrString: /9feb19d132a946b9cc163070059c4465
+MD5: c090e741a6faf6a61a13e767c2108cd7
+   kvfs_getattr - fpath: c090e741a6faf6a61a13e767c2108cd7, statbuf: 0xb188ec90
+gettattrString: /df0b3c1603d68b4cbc942e117c8aef05
+MD5: e0d9855fe77a0c58a7df3ccaccb1effb
+   kvfs_getattr - fpath: e0d9855fe77a0c58a7df3ccaccb1effb, statbuf: 0xb108dc90
+gettattrString: /34c4a894c27933f8f163c95760f2352a
+MD5: 3ecd0580bf9522590c13a7b9973d9a4a
+   kvfs_getattr - fpath: 3ecd0580bf9522590c13a7b9973d9a4a, statbuf: 0xb188ec90
+readlinkString: /34c4a894c27933f8f163c95760f2352a
+MD5: 3ecd0580bf9522590c13a7b9973d9a4a
+   kvfs_readlink - fpath: /home/mohit/kvfs_test/3ecd0580bf9522590c13a7b9973d9a4a, link: /home/mohit/kvfs_test/, size: 4097, len: 0
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb108dc90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+opendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+Path is` /
+readdirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_readdir - fpath: /home/mohit/kvfs_test, filler: 0xb24c7410, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+gettattrString: /88a32eb748fbfce72660b90ae70ae7c4
+MD5: b98b2df5d4c3bbf1dd584d409d4bdb9b
+   kvfs_getattr - fpath: b98b2df5d4c3bbf1dd584d409d4bdb9b, statbuf: 0xb108dc90
+gettattrString: /cef83743f41271360074b0688e5d1cd6
+MD5: aacbbf5f372a30bceb165ec2c2473bfa
+   kvfs_getattr - fpath: aacbbf5f372a30bceb165ec2c2473bfa, statbuf: 0xb188ec90
+gettattrString: /35d98f66fa376ba2458a4236f30ee2e1
+MD5: 2eef02031b3a00c22803d70f1aa1df34
+   kvfs_getattr - fpath: 2eef02031b3a00c22803d70f1aa1df34, statbuf: 0xb108dc90
+gettattrString: /4560542831b547c257d7e25b195e6394
+MD5: 4978de75bae45be45c0670907287e512
+   kvfs_getattr - fpath: 4978de75bae45be45c0670907287e512, statbuf: 0xb188ec90
+gettattrString: /9feb19d132a946b9cc163070059c4465
+MD5: c090e741a6faf6a61a13e767c2108cd7
+   kvfs_getattr - fpath: c090e741a6faf6a61a13e767c2108cd7, statbuf: 0xb108dc90
+gettattrString: /df0b3c1603d68b4cbc942e117c8aef05
+MD5: e0d9855fe77a0c58a7df3ccaccb1effb
+   kvfs_getattr - fpath: e0d9855fe77a0c58a7df3ccaccb1effb, statbuf: 0xb188ec90
+gettattrString: /34c4a894c27933f8f163c95760f2352a
+MD5: 3ecd0580bf9522590c13a7b9973d9a4a
+   kvfs_getattr - fpath: 3ecd0580bf9522590c13a7b9973d9a4a, statbuf: 0xb108dc90
+readlinkString: /34c4a894c27933f8f163c95760f2352a
+MD5: 3ecd0580bf9522590c13a7b9973d9a4a
+   kvfs_readlink - fpath: /home/mohit/kvfs_test/3ecd0580bf9522590c13a7b9973d9a4a, link: /home/mohit/kvfs_test/, size: 4097, len: 0
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb188ec90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+opendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+Path is` /
+readdirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_readdir - fpath: /home/mohit/kvfs_test, filler: 0xb24c7410, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb188ec90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /34c4a894c27933f8f163c95760f2352a
+MD5: 3ecd0580bf9522590c13a7b9973d9a4a
+   kvfs_getattr - fpath: 3ecd0580bf9522590c13a7b9973d9a4a, statbuf: 0xb188ec90
+unlinkString: /34c4a894c27933f8f163c95760f2352a
+MD5: 3ecd0580bf9522590c13a7b9973d9a4a
+   kvfs_unlink - fpath: /home/mohit/kvfs_test/3ecd0580bf9522590c13a7b9973d9a4a
+/88a32eb748fbfce72660b90ae70ae7c4 3ecd0580bf9522590c13a7b9973d9a4a/cef83743f41271360074b0688e5d1cd6 3ecd0580bf9522590c13a7b9973d9a4a/.. 3ecd0580bf9522590c13a7b9973d9a4a/35d98f66fa376ba2458a4236f30ee2e1 3ecd0580bf9522590c13a7b9973d9a4a/4560542831b547c257d7e25b195e6394 3ecd0580bf9522590c13a7b9973d9a4a/9feb19d132a946b9cc163070059c4465 3ecd0580bf9522590c13a7b9973d9a4a/df0b3c1603d68b4cbc942e117c8aef05 3ecd0580bf9522590c13a7b9973d9a4a/34c4a894c27933f8f163c95760f2352a 3ecd0580bf9522590c13a7b9973d9a4agettattrString: /35d98f66fa376ba2458a4236f30ee2e1
+MD5: 2eef02031b3a00c22803d70f1aa1df34
+   kvfs_getattr - fpath: 2eef02031b3a00c22803d70f1aa1df34, statbuf: 0xb188ec90
+access    kvfs_fullpath:  path = "/35d98f66fa376ba2458a4236f30ee2e1"
+String: /35d98f66fa376ba2458a4236f30ee2e1
+MD5: 2eef02031b3a00c22803d70f1aa1df34
+   kvfs_access - fpath: /home/mohit/kvfs_test/2eef02031b3a00c22803d70f1aa1df34, mask: 2/88a32eb748fbfce72660b90ae70ae7c4 2eef02031b3a00c22803d70f1aa1df34/cef83743f41271360074b0688e5d1cd6 2eef02031b3a00c22803d70f1aa1df34/.. 2eef02031b3a00c22803d70f1aa1df34/35d98f66fa376ba2458a4236f30ee2e1 2eef02031b3a00c22803d70f1aa1df34unlinkString: /35d98f66fa376ba2458a4236f30ee2e1
+MD5: 2eef02031b3a00c22803d70f1aa1df34
+   kvfs_unlink - fpath: /home/mohit/kvfs_test/2eef02031b3a00c22803d70f1aa1df34
+/88a32eb748fbfce72660b90ae70ae7c4 2eef02031b3a00c22803d70f1aa1df34/cef83743f41271360074b0688e5d1cd6 2eef02031b3a00c22803d70f1aa1df34/.. 2eef02031b3a00c22803d70f1aa1df34/35d98f66fa376ba2458a4236f30ee2e1 2eef02031b3a00c22803d70f1aa1df34gettattrString: /4560542831b547c257d7e25b195e6394
+MD5: 4978de75bae45be45c0670907287e512
+   kvfs_getattr - fpath: 4978de75bae45be45c0670907287e512, statbuf: 0xb188ec90
+access    kvfs_fullpath:  path = "/4560542831b547c257d7e25b195e6394"
+String: /4560542831b547c257d7e25b195e6394
+MD5: 4978de75bae45be45c0670907287e512
+   kvfs_access - fpath: /home/mohit/kvfs_test/4978de75bae45be45c0670907287e512, mask: 2/88a32eb748fbfce72660b90ae70ae7c4 4978de75bae45be45c0670907287e512/cef83743f41271360074b0688e5d1cd6 4978de75bae45be45c0670907287e512/.. 4978de75bae45be45c0670907287e512/4560542831b547c257d7e25b195e6394 4978de75bae45be45c0670907287e512unlinkString: /4560542831b547c257d7e25b195e6394
+MD5: 4978de75bae45be45c0670907287e512
+   kvfs_unlink - fpath: /home/mohit/kvfs_test/4978de75bae45be45c0670907287e512
+/88a32eb748fbfce72660b90ae70ae7c4 4978de75bae45be45c0670907287e512/cef83743f41271360074b0688e5d1cd6 4978de75bae45be45c0670907287e512/.. 4978de75bae45be45c0670907287e512/4560542831b547c257d7e25b195e6394 4978de75bae45be45c0670907287e512gettattrString: /88a32eb748fbfce72660b90ae70ae7c4
+MD5: b98b2df5d4c3bbf1dd584d409d4bdb9b
+   kvfs_getattr - fpath: b98b2df5d4c3bbf1dd584d409d4bdb9b, statbuf: 0xb108dc90
+access    kvfs_fullpath:  path = "/88a32eb748fbfce72660b90ae70ae7c4"
+String: /88a32eb748fbfce72660b90ae70ae7c4
+MD5: b98b2df5d4c3bbf1dd584d409d4bdb9b
+   kvfs_access - fpath: /home/mohit/kvfs_test/b98b2df5d4c3bbf1dd584d409d4bdb9b, mask: 2/88a32eb748fbfce72660b90ae70ae7c4 b98b2df5d4c3bbf1dd584d409d4bdb9bunlinkString: /88a32eb748fbfce72660b90ae70ae7c4
+MD5: b98b2df5d4c3bbf1dd584d409d4bdb9b
+   kvfs_unlink - fpath: /home/mohit/kvfs_test/b98b2df5d4c3bbf1dd584d409d4bdb9b
+/88a32eb748fbfce72660b90ae70ae7c4 b98b2df5d4c3bbf1dd584d409d4bdb9bgettattrString: /9feb19d132a946b9cc163070059c4465
+MD5: c090e741a6faf6a61a13e767c2108cd7
+   kvfs_getattr - fpath: c090e741a6faf6a61a13e767c2108cd7, statbuf: 0xb188ec90
+gettattrString: /cef83743f41271360074b0688e5d1cd6
+MD5: aacbbf5f372a30bceb165ec2c2473bfa
+   kvfs_getattr - fpath: aacbbf5f372a30bceb165ec2c2473bfa, statbuf: 0xb108dc90
+gettattrString: /df0b3c1603d68b4cbc942e117c8aef05
+MD5: e0d9855fe77a0c58a7df3ccaccb1effb
+   kvfs_getattr - fpath: e0d9855fe77a0c58a7df3ccaccb1effb, statbuf: 0xb188ec90
+access    kvfs_fullpath:  path = "/df0b3c1603d68b4cbc942e117c8aef05"
+String: /df0b3c1603d68b4cbc942e117c8aef05
+MD5: e0d9855fe77a0c58a7df3ccaccb1effb
+   kvfs_access - fpath: /home/mohit/kvfs_test/e0d9855fe77a0c58a7df3ccaccb1effb, mask: 2/cef83743f41271360074b0688e5d1cd6 e0d9855fe77a0c58a7df3ccaccb1effb/.. e0d9855fe77a0c58a7df3ccaccb1effb/9feb19d132a946b9cc163070059c4465 e0d9855fe77a0c58a7df3ccaccb1effb/df0b3c1603d68b4cbc942e117c8aef05 e0d9855fe77a0c58a7df3ccaccb1effbunlinkString: /df0b3c1603d68b4cbc942e117c8aef05
+MD5: e0d9855fe77a0c58a7df3ccaccb1effb
+   kvfs_unlink - fpath: /home/mohit/kvfs_test/e0d9855fe77a0c58a7df3ccaccb1effb
+/cef83743f41271360074b0688e5d1cd6 e0d9855fe77a0c58a7df3ccaccb1effb/.. e0d9855fe77a0c58a7df3ccaccb1effb/9feb19d132a946b9cc163070059c4465 e0d9855fe77a0c58a7df3ccaccb1effb/df0b3c1603d68b4cbc942e117c8aef05 e0d9855fe77a0c58a7df3ccaccb1effbopendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+Path is` /
+readdirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_readdir - fpath: /home/mohit/kvfs_test, filler: 0xb24c7410, fuse_file_info: 0xb188ec80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+gettattrString: /cef83743f41271360074b0688e5d1cd6
+MD5: aacbbf5f372a30bceb165ec2c2473bfa
+   kvfs_getattr - fpath: aacbbf5f372a30bceb165ec2c2473bfa, statbuf: 0xb108dc90
+gettattrString: /9feb19d132a946b9cc163070059c4465
+MD5: c090e741a6faf6a61a13e767c2108cd7
+   kvfs_getattr - fpath: c090e741a6faf6a61a13e767c2108cd7, statbuf: 0xb188ec90
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb188ec90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+opendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+Path is` /
+readdirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_readdir - fpath: /home/mohit/kvfs_test, filler: 0xb24c7410, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb188ec90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /9feb19d132a946b9cc163070059c4465
+MD5: c090e741a6faf6a61a13e767c2108cd7
+   kvfs_getattr - fpath: c090e741a6faf6a61a13e767c2108cd7, statbuf: 0xb108dc90
+rmdirString: /9feb19d132a946b9cc163070059c4465
+MD5: c090e741a6faf6a61a13e767c2108cd7
+   kvfs_rmdir - fpath: /home/mohit/kvfs_test/c090e741a6faf6a61a13e767c2108cd7
+/cef83743f41271360074b0688e5d1cd6 c090e741a6faf6a61a13e767c2108cd7/.. c090e741a6faf6a61a13e767c2108cd7/9feb19d132a946b9cc163070059c4465 c090e741a6faf6a61a13e767c2108cd7gettattrString: /cef83743f41271360074b0688e5d1cd6
+MD5: aacbbf5f372a30bceb165ec2c2473bfa
+   kvfs_getattr - fpath: aacbbf5f372a30bceb165ec2c2473bfa, statbuf: 0xb088cc90
+rmdirString: /cef83743f41271360074b0688e5d1cd6
+MD5: aacbbf5f372a30bceb165ec2c2473bfa
+   kvfs_rmdir - fpath: /home/mohit/kvfs_test/aacbbf5f372a30bceb165ec2c2473bfa
+/cef83743f41271360074b0688e5d1cd6 aacbbf5f372a30bceb165ec2c2473bfaopendirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_opendir - fpath: /home/mohit/kvfs_test, fuse_file_info: 0xb108dc80
+    fi:
+    flags = 0x00018800
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+Path is` /
+readdirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_readdir - fpath: /home/mohit/kvfs_test, filler: 0xb24c7410, fuse_file_info: 0xb088cc80
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+Exiting readdir
+releasedirString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+   kvfs_releasedir - fpath: 6666cd76f96956469e7be39d750cc7d9, fuse_file_info: 0xb188ec90
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000000
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_getattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+gettattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_getattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb188ec90
+Error: No such file or directory: Unable to get attributes
+
+gettattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_getattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+gettattrString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_getattr - fpath: 4560542831b547c257d7e25b195e6394, statbuf: 0xb188ec90
+Error: No such file or directory: Unable to get attributes
+
+gettattrString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_getattr - fpath: 4560542831b547c257d7e25b195e6394, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+mknodString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_mknod - fpath: /home/mohit/kvfs_test/4560542831b547c257d7e25b195e6394, mode: 0100664, dev: 0
+gettattrString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_getattr - fpath: 4560542831b547c257d7e25b195e6394, statbuf: 0xb188ec90
+openString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_open - fpath: /home/mohit/kvfs_test/4560542831b547c257d7e25b195e6394, fuse_file_info: 0xb088cd40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0x0000000000000000
+flushString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+
+kvfs_flush(path="4560542831b547c257d7e25b195e6394", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000017
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0xc11836c24db1ceed
+writeString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_write - fpath: 4560542831b547c257d7e25b195e6394, fuse_file_info: 0xb108ddb0
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000017
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0x0000000000000000
+flushString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+
+kvfs_flush(path="4560542831b547c257d7e25b195e6394", fi=0xb088cd40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000017
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0xc11836c24db1ceed
+releaseString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_release - fpath: 4560542831b547c257d7e25b195e6394, fi: 0xb188ed40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000017
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0x0000000000000000
+gettattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_getattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb108dc90
+Error: No such file or directory: Unable to get attributes
+
+mknodString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_mknod - fpath: /home/mohit/kvfs_test/88a32eb748fbfce72660b90ae70ae7c4, mode: 0100664, dev: 0
+gettattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_getattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb088cc90
+openString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_open - fpath: /home/mohit/kvfs_test/88a32eb748fbfce72660b90ae70ae7c4, fuse_file_info: 0xb188ed40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0x0000000000000000
+flushString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+
+kvfs_flush(path="88a32eb748fbfce72660b90ae70ae7c4", fi=0xb108dd40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000017
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0xc11836c24db1ceed
+writeString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_write - fpath: 88a32eb748fbfce72660b90ae70ae7c4, fuse_file_info: 0xb088cdb0
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000017
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0x0000000000000000
+flushString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+
+kvfs_flush(path="88a32eb748fbfce72660b90ae70ae7c4", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000017
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0xc11836c24db1ceed
+releaseString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_release - fpath: 88a32eb748fbfce72660b90ae70ae7c4, fi: 0xb108dd40
+    fi:
+    flags = 0x00008401
+    fh_old = 0x00000017
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000017
+    lock_owner = 0x0000000000000000
+gettattrString: /
+MD5: 6666cd76f96956469e7be39d750cc7d9
+gettattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_getattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb188ec90
+gettattrString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_getattr - fpath: 4560542831b547c257d7e25b195e6394, statbuf: 0xb108dc90
+openString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_open - fpath: /home/mohit/kvfs_test/88a32eb748fbfce72660b90ae70ae7c4, fuse_file_info: 0xb088cd40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000018
+    lock_owner = 0x0000000000000000
+openString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_open - fpath: /home/mohit/kvfs_test/4560542831b547c257d7e25b195e6394, fuse_file_info: 0xb188ed40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000000
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000019
+    lock_owner = 0x0000000000000000
+readString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_read - fpath: 88a32eb748fbfce72660b90ae70ae7c4, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000018
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000018
+    lock_owner = 0x0000000000000000
+fgetattrString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_fgetattr - fpath: 88a32eb748fbfce72660b90ae70ae7c4, statbuf: 0xb088cc60, fuse_file_info: 0xb088cd40
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000018
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000018
+    lock_owner = 0x0000000000000000
+    si:
+    st_dev = 2049
+    st_ino = 1351169
+    st_mode = 0100664
+    st_nlink = 1
+    st_uid = 1000
+    st_gid = 1000
+    st_rdev = 0
+    st_size = 6
+    st_blksize = 4096
+    st_blocks = 8
+    st_atime = 0x583e1d65
+    st_mtime = 0x583e1d62
+    st_ctime = 0x583e1d62
+readString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_read - fpath: 4560542831b547c257d7e25b195e6394, fuse_file_info: 0xb188ed40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000019
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000019
+    lock_owner = 0x0000000000000000
+fgetattrString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_fgetattr - fpath: 4560542831b547c257d7e25b195e6394, statbuf: 0xb108dc60, fuse_file_info: 0xb108dd40
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000019
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000019
+    lock_owner = 0x0000000000000000
+    si:
+    st_dev = 2049
+    st_ino = 1351167
+    st_mode = 0100664
+    st_nlink = 1
+    st_uid = 1000
+    st_gid = 1000
+    st_rdev = 0
+    st_size = 5
+    st_blksize = 4096
+    st_blocks = 8
+    st_atime = 0x583e1d65
+    st_mtime = 0x583e1d59
+    st_ctime = 0x583e1d59
+flushString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+
+kvfs_flush(path="88a32eb748fbfce72660b90ae70ae7c4", fi=0xb088cd40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000018
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000018
+    lock_owner = 0x2b887193156e4cc1
+releaseString: /mohit
+MD5: 88a32eb748fbfce72660b90ae70ae7c4
+   kvfs_release - fpath: 88a32eb748fbfce72660b90ae70ae7c4, fi: 0xb188ed40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000018
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000018
+    lock_owner = 0x0000000000000000
+flushString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+
+kvfs_flush(path="4560542831b547c257d7e25b195e6394", fi=0xb188ed40)
+    fi:
+    flags = 0x00000000
+    fh_old = 0x00000019
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000019
+    lock_owner = 0x2b887193156e4cc1
+releaseString: /amit
+MD5: 4560542831b547c257d7e25b195e6394
+   kvfs_release - fpath: 4560542831b547c257d7e25b195e6394, fi: 0xb088cd40
+    fi:
+    flags = 0x00008000
+    fh_old = 0x00000019
+    writepage = 0
+    direct_io = 0
+    keep_cache = 0
+    fh = 0x0000000000000019
+    lock_owner = 0x0000000000000000
+
+kvfs_destroy(userdata=0x01d99010)
